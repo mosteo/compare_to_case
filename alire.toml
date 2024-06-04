@@ -1,0 +1,10 @@
+name = "compare_to_case"
+description = "Turn a three-way <,=,> comparison into a case-friendly value"
+version = "0.1.0-dev"
+
+authors = ["Alejandro R. Mosteo"]
+maintainers = ["Alejandro R. Mosteo <alejandro@mosteo.com>"]
+maintainers-logins = ["mosteo"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = ["compare", "case", "three-way"]
