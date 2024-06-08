@@ -1,6 +1,8 @@
 package Compare_To_Case is
 
-   type Result is (Left_First, Equal, Right_First);
+   type Result is (Left, Equal, Right);
+
+   type Bool_Result is (Left, Right, None, Both);
 
    -------------
    -- Compare --
@@ -14,21 +16,23 @@ package Compare_To_Case is
    --  possible outcomes of comparing two values.
      with Post => Compare'Result =
        (if L < R
-        then Left_First
+        then Left
         else (if R < L
-              then Right_First
+              then Right
               else Equal));
 
-   ----------------
-   -- Which_True --
-   ----------------
+   ---------------
+   -- Which_One --
+   ---------------
 
-   function Which_True (L, R : Boolean) return Result
+   function Which_One (L, R : Boolean) return Bool_Result
    is (if L and then not R then
-          Left_First
+          Left
        elsif R and then not L then
-          Right_First
+          Right
+       elsif L then
+          Both
        else
-          Equal);
+          None);
 
 end Compare_To_Case;

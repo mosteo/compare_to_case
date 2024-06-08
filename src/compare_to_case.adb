@@ -7,9 +7,9 @@ package body Compare_To_Case is
    function Compare (L, R : Comparable) return Result is
    begin
       if L < R then
-         return Left_First;
+         return Left;
       elsif R < L then
-         return Right_First;
+         return Right;
       else
          return Equal;
       end if;
